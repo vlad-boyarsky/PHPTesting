@@ -2,8 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-/** @test */
-final class EmailTest extends TestCase
+class EmailTest extends TestCase
 {
 
     public function getData(): array

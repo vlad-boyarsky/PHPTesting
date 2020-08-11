@@ -1,0 +1,7 @@
+<phpunit>
+    <testsuites>
+        <testsuite name="Use all email test">
+            <directory>./src</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
