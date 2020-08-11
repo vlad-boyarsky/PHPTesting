@@ -17,6 +17,7 @@ class EmailTest extends TestCase
     public function testShould_ReturnValue() : void
     {
         //Risky
+        $this->markTestIncomplete();
     }
 
     public function testShould_HasKey(): void
