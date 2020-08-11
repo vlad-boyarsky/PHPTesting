@@ -14,6 +14,11 @@ class EmailTest extends TestCase
         ];
     }
 
+    public function testShould_ReturnValue() : void
+    {
+        //Risky
+    }
+
     public function testShould_HasKey(): void
     {
         $arrayEmail = $this->getData();
