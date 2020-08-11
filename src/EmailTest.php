@@ -14,13 +14,21 @@ class EmailTest extends TestCase
         ];
     }
 
-    public function testShould_ReturnValueRisky() : void
+    public function getEmails(string $protocolHttp, string $protocolHttps)
+    {
+        if($protocolHttp == 'http' && $protocolHttps != null){
+            return $protocolHttp = 'http';
+        }
+        return $protocolHttps = 'https';
+    }
+
+    public function testShould_ReturnValueRisky(): void
     {
         //Risky
         $this->markTestIncomplete();
     }
 
-    public function testShould_ReturnValueSkip() : void
+    public function testShould_ReturnValueSkip(): void
     {
         //Skipped
         $this->markTestSkipped();
@@ -44,6 +52,26 @@ class EmailTest extends TestCase
         $this->assertEquals(1, 1);
 
         $this->assertEquals(2, 2);
+    }
+
+
+    /**
+     * @dataProvider emailsHaveHttpDataProvider
+     */
+
+    public function testShould_GetEmailsProtocol($protocolHttp, $protocolHttps, $expected)
+    {
+        $protocolEmailInfo = $this->getEmails($protocolHttp, $protocolHttps);
+        $this->assertEquals($expected, $protocolEmailInfo);
+    }
+
+    public function emailsHaveHttpDataProvider()
+    {
+        return [
+            ['http', 'ht', 'http'],
+            ['http', 'ht', 'http'],
+            ['http', 'ht', 'http']
+        ];
     }
 
 }
