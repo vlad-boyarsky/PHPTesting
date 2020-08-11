@@ -14,10 +14,16 @@ class EmailTest extends TestCase
         ];
     }
 
-    public function testShould_ReturnValue() : void
+    public function testShould_ReturnValueRisky() : void
     {
         //Risky
         $this->markTestIncomplete();
+    }
+
+    public function testShould_ReturnValueSkip() : void
+    {
+        //Skipped
+        $this->markTestSkipped();
     }
 
     public function testShould_HasKey(): void
