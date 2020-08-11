@@ -5,23 +5,34 @@ use PHPUnit\Framework\TestCase;
 /** @test */
 final class EmailTest extends TestCase
 {
-    public function testEmailAddress(): void
+
+    public function getData(): array
     {
-        $arrayEmail = [
+        return [
             'io' => 'false',
             'www' => 'true',
             '' => 'nan'
         ];
+    }
+
+    public function testShould_HasKey(): void
+    {
+        $arrayEmail = $this->getData();
 
         $this->assertArrayHasKey('', $arrayEmail);
+    }
+
+    public function testShould_ContainsSpecialCount(): void
+    {
+        $arrayEmail = $this->getData();
 
         $this->assertCount(3, $arrayEmail);
 
         $this->assertEquals('true', $arrayEmail['www']);
 
-        $this->assertEquals(1,1);
+        $this->assertEquals(1, 1);
 
-        $this->assertEquals(2,2);
+        $this->assertEquals(2, 2);
     }
 
 }
