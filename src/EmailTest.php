@@ -8,6 +8,7 @@ class EmailTest extends TestCase
     public function getData(): array
     {
         return [
+            ':' => '',
             'io' => 'false',
             'www' => 'true',
             '' => 'nan'
